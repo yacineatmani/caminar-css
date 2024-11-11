@@ -246,6 +246,8 @@ header h2{
 
 /* Utilisation du Grid pour organiser en 2 colonnes et 3 rangées */
 .grid {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Ombre pour l'effet 3D */
+
     display: grid;                     /* Appliquer Grid */
     grid-template-columns: 1fr 1fr;     /* 2 colonnes égales */
     grid-template-rows: auto auto auto; /* 3 rangées */
@@ -260,6 +262,7 @@ header h2{
     text-align: center;                 /* Centrer le texte */
     border-radius: 3px;                 /* Coins arrondis */
     display: flex;                      /* Flexbox pour centrer le contenu à l'intérieur de la box */
+    flex-direction: column;
     align-items: center;                /* Centrer verticalement */
     justify-content: center;            /* Centrer horizontalement */
     width: 100%;                        /* Chaque élément prend toute la largeur de sa cellule */
@@ -267,6 +270,7 @@ header h2{
     box-sizing: border-box;             /* Inclure padding et bordure dans la taille de l'élément */
     margin: 0;                          /* Enlever toute marge supplémentaire */
     padding: 0;                         /* Enlever tout padding supplémentaire */
+    
 }
 
 /* Images : Ajuster les images pour qu'elles ne débordent pas */
@@ -305,11 +309,13 @@ header h2{
 
 /* Titre et texte */
 .text h3 {
+    color: #4c4d4f;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .text p {
+    color: #4c4d4f;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -326,3 +332,97 @@ header h2{
         grid-template-columns: 1fr; /* 1 colonne sur les petits écrans */
     }
 }
+ 
+/* Style global du footer */
+footer {
+    width: 80%;                   /* Largeur du footer (80% du conteneur parent) */
+    height: auto;                 /* Hauteur automatique pour ajuster au contenu */
+    display: flex;                /* Utilisation de Flexbox */
+    flex-direction: column;       /* Empile les éléments verticalement */
+    justify-content: center;      /* Centrer verticalement */
+    align-items: center;          /* Centrer horizontalement */
+    margin: 0 auto;               /* Centrer le footer sur la page */
+    text-align: center;           /* Centrer le texte */
+    padding: 40px 0;              /* Padding interne pour espacer les éléments du bord */
+    background-color: #333;       /* Fond sombre pour le footer */
+    color: white;                 /* Texte blanc */
+}
+
+/* Style des icônes de réseaux sociaux */
+footer .social-icons {
+    display: flex;                /* Utilisation de Flexbox pour aligner les icônes horizontalement */
+    justify-content: center;      /* Centrer les icônes horizontalement */
+    gap: 20px;                    /* Espacement entre les icônes */
+    margin-bottom: 20px;          /* Espace sous les icônes */
+}
+
+/* Style des icônes (font-awesome) */
+footer .social-icons i {
+    font-size: 40px;              /* Taille des icônes */
+    cursor: pointer;             /* Curseur en forme de main au survol */
+    transition: transform 0.3s, color 0.3s; /* Effet de transition lors du survol */
+}
+
+/* Effet au survol des icônes (zoom et changement de couleur) */
+footer .social-icons i:hover {
+    transform: scale(1.2);        /* Augmenter légèrement la taille au survol */
+    color: #1da1f2;               /* Couleur de survol (bleu pour Twitter) */
+}
+
+/* Style du texte sous les icônes */
+footer p {
+    font-size: 1rem;              /* Taille de police plus petite */
+    margin-top: 10px;             /* Espacement entre les icônes et le texte */
+    color: #ccc;                  /* Couleur plus claire pour le texte */
+}
+/* Appliquer un soulignement personnalisé */
+footer .underline {
+    text-decoration: underline;   /* Souligner le texte */
+                /* Change la couleur du texte souligné (optionnel) */
+    font-weight: bold;            /* Ajouter de la graisse au texte (optionnel) */
+}
+
+
+/* Responsivité pour petits écrans */
+@media (max-width: 768px) {
+    footer .social-icons {
+        gap: 15px;                /* Moins d'espacement entre les icônes sur petits écrans */
+    }
+
+    footer .social-icons i {
+        font-size: 30px;          /* Réduire la taille des icônes sur petits écrans */
+    }
+
+    footer p {
+        font-size: 0.9rem;         /* Réduire la taille du texte sur petits écrans */
+    }
+}
+
+/* Spécificité pour chaque icône */
+footer .social-icons i.fa-twitter:hover {
+    color: #1da1f2; /* Couleur Twitter */
+}
+
+footer .social-icons i.fa-facebook:hover {
+    color: #1877f2; /* Couleur Facebook */
+}
+
+footer .social-icons i.fa-instagram:hover {
+    color: #e1306c; /* Couleur Instagram */
+}
+
+footer .social-icons i.fa-envelope:hover {
+    color: #f1c40f; /* Couleur jaune pour l'enveloppe */
+}
+
+/* Inverser les couleurs de l'icône Facebook */
+#facebook {
+    filter: invert();   /* Inverse les couleurs */
+}
+
+/* Inverser les couleurs de l'icône Enveloppe */
+#envelope {
+    filter: invert();   /* Inverse les couleurs */
+}
+
+/* Les autres icônes (Twitter, Instagram) gardent leur couleur par défaut */
